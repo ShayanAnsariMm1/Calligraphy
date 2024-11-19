@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calligraphy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+        *{
+         font-family: "Poppins", sans-serif;
+         }
+.map{
+    height: 500px;
+}
+a, a:hover{
+    text-decoration: none;
+  color: inherit;
+  outline: 0;
+  background: none;
+}
+.contact-transition {
+transition: transform 0.3s ease-in-out;
+}
+
+.contact-transition:hover {
+    transform: scale(1.05);
+}
+
+.icon{
+    border-radius: 50%;
+    border: 2px solid black;
+    height: 70px;
+    /* padding: 10px; */
+   object-fit: cover;
+}
+.card:hover .icon{
+  background-color:white;
+    border: 3px solid gold;
+    border-radius: 50%; 
+}
+
+/* Navbar */
+#header{
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+    position: fixed;
+    z-index: 12;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .container_2{
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav_ico{
+    display: block;
+    width: 40px;
+    cursor: pointer;
+  }
+  .main_nav {
+    float: right;
+  }
+  .main_nav ul{
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+  }
+  .main_nav ul li{
+    float: left;
+    margin: 0 0 0 5px;
+    position: relative;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    position: relative;
+  }
+  .main_nav ul li a {
+    color: white;
+    display: block;
+    line-height: 1.4;
+    text-decoration: none;
+    padding: 5px 15px;
+    transition: all 0.3s ease-out;
+  }
+  .main_nav ul li:hover > a{
+    color: goldenrod ;
+  }
+  .main_nav ul li i{
+    position: absolute;
+    right: 0;
+    top: 10px;
+    color: #fff;
+  }
+  .main_nav ul li:hover > i{ color: goldenrod ; }
+  
+  .main_nav ul ul{
+    position: absolute;
+    left: 0;
+    top:calc(100% + 15px);
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    pointer-events: none;
+  }
+  .main_nav ul ul li{
+    float: none;
+    margin:0;
+    border-bottom: 1px solid #fff;
+  }
+  .main_nav > ul > li > ul:after{
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    height: 16px;
+    width: 100%;
+    left: 0;
+  }
+  
+  .main_nav ul ul ul{
+    left: 100%;
+    top:0;
+  }
+  .main_nav ul li:hover > ul{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .main_nav ul ul li a{
+    background:black;
+  }
+  .main_nav ul li:hover ul li:hover > a{
+    color: #fff;
+    background:goldenrod ;
+  }
+  .main_nav ul ul li i{
+    transform: rotate(-90deg);
+  }
+  .main_nav ul ul li:hover i{ color: #fff; }
+  
+  
+  
+  
+  /* /This Media Query use for iPad Portrait View */
+  @media only screen and (min-width:768px) and (max-width:991px){
+    .main_nav ul li{ margin: 0 ; font-size: 16px; }
+    .main_nav ul li a{ padding: 5px 10px; }
+  
+  }
+  
+  @media screen and (min-width: 768px){
+    .nav_ico,
+    #menuTrigger{  display: none;} 
+  }
+  /* This Media Query use for Mobile View */
+  @media screen and (max-width: 767px){
+    .nav_ico{ 
+      display: block;
+      position: relative;
+      z-index: 10;
+      color: #fff;
+      font-size: 36px;
+  
+    } 
+    .main_nav {
+      position: fixed;
+      left: 0;
+      top: 72px;
+      padding:0;
+      background: black ;
+      z-index: 5;
+      height: calc(100vh - 74px);
+      overflow: auto;
+      width: calc(100% - 80px);
+      transition: all 0.3s ease-out;
+      transform: translateX(-100%);
+    }
+    .main_nav ul li {
+      float: none;
+      margin: 0 !important;
+      padding: 0 !important;
+      border-bottom: 1px solid;
+    }
+    .main_nav ul li a {
+      display: block;
+      color: #fff;
+      padding: 10px;
+    }
+    .main_nav > ul > li:hover > a{
+      background:goldenrod ;
+      color: #fff;
+    } 
+    .main_nav ul ul{
+      position: static;
+      pointer-events: auto;
+      opacity: 1;
+      height: 0;
+      overflow: hidden;
+    }
+    .main_nav ul ul li a{
+      padding-left: 30px;
+    }
+    .main_nav ul ul ul li a{
+      padding-left: 60px;
+    }
+    .main_nav ul ul ul ul li a{
+      padding-left: 90px;
+    }
+    .main_nav ul li:hover > ul {
+      height: auto;
+    }
+    .main_nav ul li i{ right: 10px !important; }
+    .main_nav ul li:hover > i{ color: #fff }
+    .main_nav ul ul li i{transform: rotate(0deg);}
+  
+    #menuTrigger{
+      opacity: 0;
+      position: fixed;
+      width: 0;
+      height: 0;
+      margin: 0
+    }
+    #menuTrigger:checked + .main_nav{
+      transform: translateX(0%);
+    }
+  
+    
+  
+  }
+  
+  /* Navbar-Close */
+    </style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- navbar -->
+    <header id="header"><!--header-start-->
+      <div class="container_2">
+        <div class="header_left">
+          <a class="logo" href="index.html"><img src="images/logo.jpg" alt="logo" width="100px"></a>
+        </div>
+        <div class="header_right">
+          <label for="menuTrigger" class="nav_ico"><i class="fa fa-bars"></i></label>
+          <input id="menuTrigger" type="checkbox" name="">
+          <nav class="main_nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="Categories-page.html">Categories</a>
+                <i class="fa fa-caret-down"></i>
+                <ul>
+                  <li><a href="Arabic-Calligraphy-page.html">Arabic</a></li>
+                  <li><a href="Greek-Calligraphy-page.html">Greek</a></li>
+                  <li><a href="Indic-Calligraphy-page.html">Indic</a>
+                    <li><a href="Kids-Calligraphy-page.html">Kids</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="Gallery-page.html">Gallery</a></li>
+              <li><a href="About-us-page.html">About Us</a></li>
+              <li><a href="Contact-us-page.html">Contact Us</a></li>
+            </ul>
+          </nav>    
+        </div>
+        
+      </div>
+    </header><!--header-end-->
+    
+        <!-- Navbar-Close-->
+
+    <!-- section -->
+    <div class="section" id="contact-us">
+        <div class="d-grid pt-md-5 pt-sm-5">
+          <div class="mt-5">
+
+          <div class="container  text-center mt-5">
+            <div class="row pt-lg-5">
+             <div class="col-lg-6 col-md-8 mx-auto pt-lg-5">
+             <div class="display-3 fw-bold fst-italic lh-base head"><span style="color: goldenrod;"> Contact </span>Us</div>
+             <div class="h5 fw-normal fst-italic"><a href="index.html" style="color: black;">Home //</a><a href="Contact-us-page.html" style="color: black;"> Contact Us</a></div>
+            </div>
+         </div> 
+         </div>
+
+         <div class="mt-5">
+            <!-- Google MAP -->
+            <iframe class="container-fluid map" src="https://maps.google.com/maps?q=Pakistan Karachi&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+          </div>
+
+          <!-- card -->
+          <div class="container">
+            <div class="row mt-5 text-center g-1 ">
+    
+              <div class=" col-lg-4 col-12 mt-1 ">
+                <div class="card p-lg-4 mx-4 border rounded shadow contact-transition">
+                  <div class="mb-2 card-body">
+                    <div class="container">
+                       <div class="mb-5"><img src="icon/telephone.png" alt="icon" class="icon p-2"></div> 
+                       <div class="card-title mt-5 h2 "><i>Phone:</i></div>
+                      <div class="card-title mt-2 h2"><a href="tel:01233434">0637263726</a></div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+         
+
+     
+              <div class=" col-lg-4 col-12 mt-1 ">
+                <div class="card p-lg-4 mx-4 border rounded shadow  contact-transition">
+                  <div class="mb-2 card-body">
+                    <div class="container">
+                       <div class="mb-5"><img src="icon/email.png" alt="icon" class="icon p-2"></div> 
+                       <div class="card-title mt-5 h2 "><i>Email:</i></div>
+                      <div class="card-title mt-2 h2"><a href="mailto:#">info@abc.com</a></div>
+                  </div>
+                  </div>
+         </div>
+        </div>
+
+
+              <div class=" col-lg-4 col-12 mt-1 ">
+                <div class="card p-lg-4 mx-4 border rounded shadow  contact-transition">
+                  <div class="mb-2 card-body">
+                    <div class="container">
+                       <div class="mb-5"><img src="icon/location.png" alt="icon" class="icon p-2"></div> 
+                       <div class="card-title mt-5 h2 "><i>Address:</i></div>
+                       <div class="card-title mt-2 h2"><a href="mailto:#">123 Street,City</a></div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+         </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- form -->
+
+<div class="container mt-3 shadow">
+  <div class="row justify-content-center ">
+      <div class="col-lg-6 col-md-8 mx-auto pt-lg-5 text-center">
+          <div class="display-5 fw-bold fst-italic">Do You’ve Any Question?</div>
+      </div>
+      
+      <form class="row g-3 justify-content-center" id="ContactForm">
+
+          <div class=" ml-1 col-7">
+            <label class="form-label">Username:</label>
+            <div class="input-group">
+              <i class="bi bi-person-circle bg-white input-group-text"></i>
+              <input type="text" class="form-control" id="name" name="name"  placeholder="Enter your Username Name">
+            </div>
+             <div class="error-message" id="nameError"></div>
+
+          </div>
+
+          <!-- <div class=" ml-1 col-7">
+            <label class="form-label">Last Name:</label>
+            <input type="text" class="form-control" required placeholder="Enter your Last Name">
+          </div>  -->
+
+          <div class=" ml-1 col-7">
+            <label class="form-label">Email:</label>
+            <div class="input-group">
+              <i class="bi bi-envelope bg-white input-group-text"></i>
+              <input type="text" class="form-control" id="email" name="email"  placeholder="Enter your Email">
+            </div>
+            <div class="error-message" id="emailError"></div>
+          </div> 
+
+          <div class=" ml-1 col-7">
+            <label class="form-label">Telephone:</label>
+            <div class="input-group">
+              <i class="bi bi-telephone bg-white input-group-text"></i>
+            <input type="te" class="form-control" maxlength="11" id="telephone" name="telephone"  placeholder="Enter your Phone number" >
+          </div>
+          <div class="error-message" id="telephoneError"></div>
+          </div>
+
+          
+              <div class="col-7 mb-3">
+            <label class="form-label">Comment:</label>
+            <div class="input-group">
+              <i class="bi bi-chat bg-white input-group-text"></i>
+                  <textarea class="form-control textarea" name="message" id="message" placeholder="Comment" rows="4" id="comment"></textarea>
+          </div>
+          <div class="error-message" id="messageError"></div>
+                </div>
+
+                <div class="col-12 text-center mb-3">
+                <button type="submit" class="btn btn-danger btn-block" id="" onclick="validateForm()">Submit</button>
+                </form>
+                 
+                  <!-- thanks modal -->
+                  
+                  <!-- Feedback -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Share your Feedback</button>
+                   <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                   <div class="modal-dialog">
+                    <div class="modal-content">
+                       <div class="modal-header">
+                       <h1 class="modal-title fs-2 h1 fw-semibold" id="exampleModalLabel">Feedback</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                       </div>
+                        <div class="modal-body">
+                          <!-- feedback form -->
+                          <div class="container-fluid">
+                            <form class="row g-3" id="feedbackForm">
+                              <div class=" ml-1 col-12">
+                                <div class="form-label text-start">username:</div>
+                                <div class="input-group">
+                                  <i class="bi bi-person-circle bg-white input-group-text"></i>
+                                <input type="text" class="form-control" id="username_modal"  name="username_modal" placeholder="Enter your First Name">
+                              </div>
+                               <div class="error-message" id="nameError_modal"></div>
+                              </div>
+                        
+                                    <div class=" ml-1 col-12">
+                                      <div class="form-label text-start mt-2">Email:</div>
+                                      <div class="input-group">
+                                        <i class="bi bi-envelope bg-white input-group-text"></i>
+                                    <input type="email" class="form-control" id="email_modal" name="email_modal" placeholder="Enter your Email">
+                                  </div>
+                                  <div class="error-message" id="emailError_modal"></div>  
+                                    </div> 
+                        
+                                    <div class=" ml-1 col-12">
+                                      <div class="form-label text-start mt-2">Telephone:</div>
+                                      <div class="input-group">
+                                        <i class="bi bi-telephone bg-white input-group-text"></i>
+                                      <input type="tel" class="form-control" maxlength="11" id="telephone_modal" name="telephone_modal" placeholder="Enter your Phone number">
+                                    </div>
+                                      <div class="error-message " id="telephoneError_modal"></div>
+                                    </div>
+                        
+                                    
+                                        <div class="col-12 mb-3">
+                                      <div class="form-label text-start mt-3">Tell us about your experience:</div>
+                                      <div class="input-group">
+                                        <i class="bi bi-chat bg-white input-group-text"></i>
+                                            <textarea class="form-control textarea"id="message_modal" name="message_modal" placeholder="We value your feedback. Please take a moment to review your experience with us." rows="4"></textarea>
+                                          </div>
+                                          <div class="error-message" id="messageError_modal"></div>
+                                          </div>
+                        
+                                          <div class="col-12 text-center mb-3 ">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button class="btn btn-danger" type="submit" id="submit_modal" onclick="validateForm_1()">Send Message</button>
+                                          </div>
+                                    
+                                  </form>
+                        
+                        </div>
+                        
+                        </div>
+                       
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+        
+        
+   </div>
+
+
+                      <!-- Thank You Modal -->
+<div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-header bg-black ">
+  <h5 class="modal-title text-warning" id="thankYouModalLabel">Thank You!</h5>
+  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>  
+  </button>
+</div>
+<div class="modal-body">
+  <p class="lead"> <span id="userName"></span>, Thank you for your contact!</p>
+  <p>We have received the following message:</p>
+  <p id="userMessage"></p>
+</div>
+
+</div>
+</div>
+</div>
+  <!-- thankYouModal feedback -->
+<div class="modal fade " id="thankYouModalfeedback" tabindex="-0.5" aria-labelledby="thankYouModalfeedbackLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered ">
+<div class="modal-content mx-2">
+<div class="modal-header bg-black">
+  <h5 class="modal-title text-warning " id="thankYouModalfeedbackLabel">Thank You!</h5>
+  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>  
+  </button>
+</div>
+<div class="modal-body bg-black text-warning">
+  <p class="lead"><span id="userName_1"></span> , Thank you for your feedback!</p>
+  <p>We have received the following message:</p>
+  <p id="userMessage_1"></p>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<br><br><br>
+<!-- footer -->
+<div class="container-fluid mt-5 bg-black g-0">
+    <!-- Copyright -->
+    <div class="text-center p-3 text-white">
+      © 2024 Copyright
+      <a class="text-warning" href="index.html">Calligraphy</a>
+    </div>
+</div>
+
+<!-- script -->
+ <script src="jquery/jquery-3.7.1.min.js"></script>
+ <script>
+  $(document).ready(function(){
+   // contact us
+    $('#ContactForm').submit(function(e){
+      e.preventDefault();
+      if (validateForm()) {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var telephone = $('#telephone').val();
+        var message = $('#message').val();
+        $('#userName').text(name);
+        $('#userMessage').text(message);
+        $('#thankYouModal').modal('show');
+        $('#ContactForm')[0].reset();
+    
+      }
+    });
+    $('#feedbackForm').submit(function(a){
+      a.preventDefault();
+      if (validateForm_1()) {
+        var name_feedback = $('#username_modal').val();
+        var email_feedback = $('#email_modal').val();
+        var telephone_feedback = $('#telephone_modal').val();
+        var message_feedback = $('#message_modal').val();
+        $('#userName_1').text(name_feedback);
+        $('#userMessage_1').text(name_feedback);
+        $('#thankYouModalfeedback').modal('show');
+        $('#feedbackForm')[0].reset();
+      }
+    });
+
+    function validateForm() {
+      var valid = true;
+      $('.error-message').text('');
+
+      // name
+      var name = $('#name').val();
+      if (!name) {
+        $('#nameError').text('Please enter your name.').css("color","red");
+        valid = false;
+      }else if (!isValidName(name)) {
+    $('#nameError').text('Please enter a valid name').css("color","red");;
+    valid = false;
+  }
+
+      // email
+      var email = $('#email').val();
+      if (!email) {
+        $('#emailError').text('Please enter your email address.').css("color","red");
+        valid = false;
+      }else if (!isValidEmail(email)) {
+    $('#emailError').text('Please enter a valid email address.').css("color","red");;
+    valid = false;
+  }
+      
+      //telephone
+      var telephone = $('#telephone').val();
+      if (!telephone) {
+        $('#telephoneError').text('Please enter your phone number').css("color","red");
+        valid = false;
+      }else if (!isValidTelephone(telephone)) {
+     $('#telephoneError').text('Please enter a valid telephone number.').css("color","red");
+     valid = false;
+      }
+
+
+      //message
+      var message = $('#message').val();
+      if (!message) {
+        $('#messageError').text('Please enter your message.').css("color","red");
+        valid = false;
+      }
+
+      return valid;
+    }
+
+  //feedback
+  function validateForm_1() {
+      var valid = true;
+      $('.error-message').text('');
+    
+      // usernmame
+      var name_feedback = $('#username_modal').val();
+      if (!name_feedback) {
+        $('#nameError_modal').text('Please enter your name.').css("color","red");
+        valid = false;
+      }else if (!isValidName(name_feedback)) {
+    $('#nameError_modal').text('Please enter a valid email address.').css("color","red");;
+    valid = false;
+  }
+
+// email_feedback
+      var email_feedback = $('#email_modal').val();
+      if (!email_feedback) {
+        $('#emailError_modal').text('Please enter your email address.').css("color","red");
+        valid = false;
+      }else if (!isValidEmail(email_feedback)) {
+    $('#emailError_modal').text('Please enter a valid email address.').css("color","red");;
+    valid = false;
+  }
+      // telephone_feedback
+      var telephone_feedback = $('#telephone_modal').val();
+      if (!telephone_feedback) {
+        $('#telephoneError_modal').text('Please enter your phone number').css("color","red");
+        valid = false;
+      }
+      else if (!isValidTelephone(telephone_feedback)) {
+     $('#telephoneError_modal').text('Please enter a valid telephone number.').css("color","red");
+     valid = false;
+      }
+
+      // message_feedback
+      var message_feedback = $('#message_modal').val();
+      if (!message_feedback) {
+        $('#messageError_modal').text('Please enter your message.').css("color","red");
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    function isValidEmail(email,email_feedback) {
+  var emailRegex = /\S+@\S+\.\S+/;
+  return emailRegex.test(email,email_feedback);
+}
+function isValidName(name,name_feedback) {
+  var nameRegex = /^[A-Za-z ]{3,20}$/;
+  return nameRegex.test(name,name_feedback);
+}
+function isValidTelephone(telephone,telephone_feedback) {
+  var telephoneRegex = /^[0-9]+$/;
+  return telephoneRegex.test(telephone,telephone_feedback);
+}
+
+
+  });
+
+
+
+</script>
+</body>
+</html>
